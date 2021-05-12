@@ -4,14 +4,15 @@ title = "SpaceOne"
 theme = "docsy"
 
 # Will give values to .Lastmod etc.
-# enableGitInfo = true
+enableGitInfo = true
 
 # Language settings
 contentDir = "content/en"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
-# Useful when translating.
+
 disableKinds = ["taxonomy", "taxonomyTerm"]
+# Useful when translating.
 enableMissingTranslationPlaceholders = true
 
 
@@ -123,9 +124,9 @@ privacy_policy = "https://policies.google.com/privacy"
 #archived_version = true
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-#github_repo = "https://github.com/google/docsy-example"
+github_repo = "https://github.com/Jeoungseungho/blog"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-#github_project_repo = "https://github.com/google/docsy"
+#github_project_repo = "https://github.com/Jeoungseungho/blog"
 
 body_classes = "georgia bg-near-white"
 navbar_logo = true
