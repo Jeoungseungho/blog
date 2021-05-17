@@ -1,23 +1,9 @@
-FROM golang:1.15-alpine as build
+FROM nginx:alpine as build
 
 LABEL maintainer="Seungho Jeong <platoon07@khu.ac.kr>"
 
 RUN apk add --update \
     wget 
-
-
-
-COPY package*.json ./
-
-RUN apk add --no-cache \
-    curl \
-    git \
-    openssh-client \
-    rsync \
-    build-base \
-    libc6-compat \
-    npm && \
-    npm install --no-optional -D autoprefixer postcss-cli 
 
 ARG HUGO_VERSION="0.82.0"
 
