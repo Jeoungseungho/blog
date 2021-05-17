@@ -1,5 +1,5 @@
 #FROM golang:1.15-alpine as build
-FROM ghcr.io/peaceiris/hugo:latest-full as build
+FROM ghcr.io/peaceiris/hugo:v0.83.1-full
 LABEL maintainer="Seungho Jeong<platoon07@khu.ac.kr>"
 
 RUN apk add --update \
@@ -18,9 +18,10 @@ RUN apk add --no-cache \
     rsync \
     build-base \
     libc6-compat \
-    nodejs \
+#    nodejs \
     npm && \
-    npm install --no-optional -D --save  autoprefixer postcss-cli
+    npm install --no-optional -D --save 
+#    npm install --no-optional -D --save  autoprefixer postcss-cli
 
 ARG HUGO_VERSION="0.83.1"
 
