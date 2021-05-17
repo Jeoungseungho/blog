@@ -7,8 +7,7 @@ RUN apk add --update \
 
 
 
-ADD . /go
-WORKDIR /go
+COPY COPY package*.json ./
 
 RUN apk add --no-cache \
     curl \
