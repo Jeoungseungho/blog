@@ -1,4 +1,3 @@
 public/
 resources/
-node_modules/
-tech-doc-hugo
+node_modules

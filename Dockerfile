@@ -1,9 +1,19 @@
-FROM nginx:alpine as build
+FROM golang:1.15-alpine as build
 
-LABEL maintainer="Seungho Jeong <platoon07@khu.ac.kr>"
+LABEL maintainer="Seungho Jeong<platoon07@khu.ac.kr>"
 
 RUN apk add --update \
     wget 
+
+RUN apk add --no-cache \
+    curl \
+    git \
+    openssh-client \
+    rsync \
+    build-base \
+    libc6-compat \
+    npm && \
+    npm install -D autoprefixer postcss-cli
 
 ARG HUGO_VERSION="0.82.0"
 
@@ -14,6 +24,7 @@ RUN wget --quiet "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VER
 
 COPY ./ /site
 WORKDIR /site
+
 RUN hugo --minify
 
 FROM nginx:alpine
