@@ -5,7 +5,7 @@ LABEL maintainer="Seungho Jeong<platoon07@khu.ac.kr>"
 RUN apk add --update \
     wget 
 
-COPY ./package.json ./
+COPY ./package.json ./go
 
 RUN apk add --no-cache \
     curl \
@@ -14,10 +14,11 @@ RUN apk add --no-cache \
     rsync \
     build-base \
     libc6-compat \
+    nodejs \
     npm && \
-    npm install --no-optional -D autoprefixer postcss-cli
+    npm install --no-optional --global --production  autoprefixer postcss-cli
 
-ARG HUGO_VERSION="0.82.0"
+ARG HUGO_VERSION="0.83.1"
 
 RUN wget --quiet "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" && \
     tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
