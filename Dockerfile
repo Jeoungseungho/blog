@@ -16,7 +16,7 @@ RUN apk add --no-cache \
     libc6-compat \
     nodejs \
     npm && \
-    npm install --no-optional --global --production  autoprefixer postcss-cli
+    npm install --no-optional -D --save  autoprefixer postcss-cli
 
 ARG HUGO_VERSION="0.83.1"
 
