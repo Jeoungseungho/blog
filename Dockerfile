@@ -5,6 +5,8 @@ LABEL maintainer="Seungho Jeong<platoon07@khu.ac.kr>"
 RUN apk add --update \
     wget 
 
+COPY ./package.json ./
+
 RUN apk add --no-cache \
     curl \
     git \
@@ -13,7 +15,7 @@ RUN apk add --no-cache \
     build-base \
     libc6-compat \
     npm && \
-    npm install -D autoprefixer postcss-cli
+    npm install --no-optional -D autoprefixer postcss-cli
 
 ARG HUGO_VERSION="0.82.0"
 
