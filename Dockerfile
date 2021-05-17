@@ -1,5 +1,5 @@
 #FROM golang:1.15-alpine as build
-FROM ghcr.io/peaceiris/hugo:v0.83.1-full
+FROM klakegg/hugo:0.83.1-ext-pandoc AS build
 LABEL maintainer="Seungho Jeong<platoon07@khu.ac.kr>"
 
 RUN apk add --update \
