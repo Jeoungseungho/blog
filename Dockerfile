@@ -5,7 +5,11 @@ LABEL maintainer="Seungho Jeong<platoon07@khu.ac.kr>"
 RUN apk add --update \
     wget 
 
-COPY ./package.json ./go
+
+WORKDIR /site
+COPY ./ /site
+
+COPY ./package.json ./package-lock.json ./
 
 RUN apk add --no-cache \
     curl \
@@ -25,8 +29,8 @@ RUN wget --quiet "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VER
     rm -r hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
     mv hugo /usr/bin
 
-COPY ./ /site
-WORKDIR /site
+#COPY ./ /site
+#WORKDIR /site
 
 RUN hugo --minify
 
