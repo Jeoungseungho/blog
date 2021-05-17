@@ -16,8 +16,8 @@ RUN apk add --no-cache \
     rsync \
     build-base \
     libc6-compat \
-    npm --no-optional && \
-    npm install -D autoprefixer postcss-cli 
+    npm && \
+    npm install --no-optional -D autoprefixer postcss-cli 
 
 ARG HUGO_VERSION="0.82.0"
 
