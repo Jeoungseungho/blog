@@ -1,9 +1,14 @@
 FROM golang:1.15-alpine as build
 
-LABEL maintainer="Seungho Jeong<platoon07@khu.ac.kr>"
+LABEL maintainer="Seungho Jeong <platoon07@khu.ac.kr>"
 
 RUN apk add --update \
     wget 
+
+
+
+ADD . /go
+WORKDIR /go
 
 RUN apk add --no-cache \
     curl \
@@ -13,7 +18,7 @@ RUN apk add --no-cache \
     build-base \
     libc6-compat \
     npm && \
-    npm install -D autoprefixer postcss-cli
+    npm install -D autoprefixer postcss-cli 
 
 ARG HUGO_VERSION="0.82.0"
 
