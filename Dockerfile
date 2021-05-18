@@ -30,6 +30,8 @@ RUN hugo --minify
 FROM nginx:alpine
 COPY --from=build /site/public /usr/share/nginx/html
 
-EXPOSE 1313
-CMD ["/bin/sh", "-c", "sed -i 's/listen  .*/listen 1313;/g' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
+#EXPOSE 1313
+#CMD ["/bin/sh", "-c", "sed -i 's/listen  .*/listen 1313;/g' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
+CMD ["/bin/sh", "-c", "sed -i 's/listen  .*/listen 80;/g' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
+EXPOSE 80 
 WORKDIR /usr/share/nginx/html
