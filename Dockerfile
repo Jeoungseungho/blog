@@ -19,7 +19,8 @@ RUN apk add --no-cache \
     build-base \
     libc6-compat \
     npm && \
-    npm install --no-optional -D --save 
+    npm install --no-optional -D --save && \
+    git submodule update --init --recursive --depth 1
 
 
 ARG HUGO_VERSION="0.83.1"
