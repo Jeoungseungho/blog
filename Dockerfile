@@ -1,4 +1,3 @@
-#FROM golang:1.15-alpine as build
 FROM klakegg/hugo:0.83.1-ext-pandoc AS build
 LABEL maintainer="Seungho Jeong<platoon07@khu.ac.kr>"
 
@@ -18,20 +17,11 @@ RUN apk add --no-cache \
     rsync \
     build-base \
     libc6-compat \
-#    nodejs \
     npm && \
     npm install --no-optional -D --save 
-#    npm install --no-optional -D --save  autoprefixer postcss-cli
+
 
 ARG HUGO_VERSION="0.83.1"
-
-#RUN wget --quiet "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" && \
-#    tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
-#    rm -r hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
-#    mv hugo /usr/bin
-
-#COPY ./ /site
-#WORKDIR /site
 
 RUN hugo --minify
 
