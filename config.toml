@@ -67,7 +67,6 @@ quality = 75
 anchor = "smart"
 
 # Additional menu items
-
 #[[menu.main]]
     #name = "Project Site"
     #url = "https://www.spaceone.org/"
@@ -80,7 +79,7 @@ anchor = "smart"
 [permalinks]
 blog = "/:section/:year/:month/:day/:slug/"
 
-#html 태그 사용가능하게 하는 옵션
+# Options to using html inline markdown  
 [markup]
   [markup.goldmark]
   [markup.goldmark.extensions]
@@ -142,7 +141,8 @@ showedit = true
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = false
 
-url_latest_version = "https://master.kubeflow.org"
+# Configure url of latest version
+# url_latest_version = ""
 
 [params.fonts]
 name = "Open Sans"
@@ -179,14 +179,16 @@ fullversion = "v1.21.0"
 version = "v1.21"
 githubbranch = "v1.21.0"
 docsbranch = "master"
-url = "https://kubernetes.io"
+# Set master version url
+url = ""
 
 [[params.versions]]
 fullversion = "v1.17.17"
 version = "v1.17"
 githubbranch = "v1.17.17"
 docsbranch = "release-1.17"
-url = "https://v1-17.docs.kubernetes.io"
+# Set release version url 
+url = ""
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
